@@ -24,4 +24,13 @@ $packageArgs = @{
 
 Get-ChocolateyWebFile @packageArgs
 
-& $downloadPath -p
+$filename = 'MSTeams.msix'
+
+$platformPackageName = 'microsoft-teams-msix'
+
+$toolsDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+$commonPath = $(Split-Path -parent $(Split-Path -parent $toolsDir))
+$installPath = Join-Path  (Join-Path $commonPath $platformPackageName) $filename
+
+Write-Host "Installing $platformPackageName from $installPath"
+& $downloadPath -p -o "$installPath"
