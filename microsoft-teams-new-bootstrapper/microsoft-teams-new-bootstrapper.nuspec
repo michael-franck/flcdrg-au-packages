@@ -28,6 +28,10 @@ When TeamsBootstrapper is run on a computer:
 
 Users who have installed a different Teams version will have their version replaced with the provisioned version.
 
+### Package Parameters
+
+- `/VDI` - The package will install the Teams Meeting Add-in for all users
+
 ### Package Specific
 
 Bootstrapper version: 1.0.2402201
